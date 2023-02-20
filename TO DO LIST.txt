@@ -3,5 +3,29 @@ DATA ANALYST : Sheetal
 ML-ENGINEER : Zakaria
 
 DATA ENGINNEERS TASK :
-
-
+  *Build a database from the customer data  Start Date : 20/02/2023
+                                            Finish Date :
+  *Deploy an application for the marketing team to predict the churn rate for new client using Docker.  Start Date:
+                                                                                                        Finish Date :
+  *Create a pipeline that incorporate the work from your collegues.   Start Date :
+                                                                      Finish Date :
+ 
+ML ENGINEERS TASK :
+  *Predict those clients with more propensity to close their bank account with financial institution.   Start Date: 20.02.2023
+                                                                                                        Finish Date:
+  *Build machine learning models for classification and/or clustering.    Start Date :
+                                                                          Finish Date :
+  *Identify the optimal number of cluster and be able to describe them.   Start Date:
+                                                                          Finish Date:
+  *Find possible groups of clients and define their characteristics alongside the data analyst.   Start date:
+                                                                                                  Finish date:
+   
+DATA ANALYST TASK :
+  *Build a dashboard with data insights and KPIs.  Start Date:
+                                                   Finish date:
+  *Clean and explore the date to provide insights to the marketing teams and ML engineer.  Start date:
+                                                                                           Finish date:
+  *Apply some of the tools in Tableau to perform clustering analysis and compare your results with the ML engineers.  Start Date:
+                                                                                                                      Finish Date:
+  *Use the information provided by the ML engineers and your own analysis to create sample client profiles.  Start Date:
+                                                                                                             Finish Date:

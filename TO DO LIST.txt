@@ -3,3 +3,19 @@ DATA ANALYST : Sheetal
 ML-ENGINEER : Zakaria
 
 DATA ENGINNEERS TASK :
+  *Build a database from the customer data  Start Date :
+                                            Finish Date :
+  *Deploy an application for the marketing team to predict the churn rate for new client using Docker.  Start Date:
+                                                                                                        Finish Date :
+  *Create a pipeline that incorporate the work from your collegues.   Start Date :
+                                                                      Finish Date :
+ 
+ML ENGINEERS TASK :
+  *Predict those clients with more propensity to close their bank account with financial institution.   Start Date:
+                                                                                                        Finish Date:
+  *Build machine learning models for classification and/or clustering.    Start Date :
+                                                                          Finish Date :
+  *Identify the optimal number of cluster and be able to describe them.   Start Date:
+                                                                          Finish Date:
+  *Find possible groups of clients and define their characteristics alongside the data analyst.   Start date:
+                                                                                                  Finish date:

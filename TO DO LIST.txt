@@ -19,3 +19,13 @@ ML ENGINEERS TASK :
                                                                           Finish Date:
   *Find possible groups of clients and define their characteristics alongside the data analyst.   Start date:
                                                                                                   Finish date:
+   
+DATA ANALYST TASK :
+  *Build a dashboard with data insights and KPIs.  Start Date:
+                                                   Finish date:
+  *Clean and explore the date to provide insights to the marketing teams and ML engineer.  Start date:
+                                                                                           Finish date:
+  *Apply some of the tools in Tableau to perform clustering analysis and compare your results with the ML engineers.  Start Date:
+                                                                                                                      Finish Date:
+  *Use the information provided by the ML engineers and your own analysis to create sample client profiles.  Start Date:
+                                                                                                             Finish Date:

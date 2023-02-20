@@ -4,6 +4,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 def fill():
+    """
+    Description:
+        This function is used to populate our database with the datas from the BankChurners.csv file
+    """
     df = pd.read_csv("./data/BankChurners.csv")
     engine = create_engine("sqlite:///DEPLOYEMENT/BankChurners.db", echo=True)
     Session = sessionmaker(bind=engine)
@@ -18,6 +22,14 @@ def fill():
         session.close()
         
 def get_all() -> list:
+    """_summary_
+
+    Returns:
+        list: _description_
+        
+    Description:
+        This function is used to get all the entries from our database as a list of User.
+    """
     engine = create_engine("sqlite:///DEPLOYEMENT/BankChurners.db")
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -25,15 +37,38 @@ def get_all() -> list:
     session.close()
     return users
 
+#def get_all_in_dataframe() -> pd.DataFrame:
+
     
 def get_one(client_number : int) -> User:
+    """_summary_
+
+    Args:
+        client_number (int): _description_
+
+    Returns:
+        User: _description_
+        
+    Description:
+        This function get a user in the database that has the same client number as the one in the arguments.
+    """
     engine = create_engine("sqlite:///DEPLOYEMENT/BankChurners.db")
     Session = sessionmaker(bind=engine)
     session = Session()
     user = get_entry(client_number, session)
     return user
 
+#def get_one_in_dataframe() -> pd.DataFrame:
+
 def add_one(user : User):
+    """_summary_
+
+    Args:
+        user (User): _description_
+        
+    Description:
+        This function add a User to the database.
+    """
     engine = create_engine("sqlite:///DEPLOYEMENT/BankChurners.db")
     Session = sessionmaker(bind=engine)
     session = Session()

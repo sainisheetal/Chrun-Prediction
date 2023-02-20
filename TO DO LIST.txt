@@ -3,7 +3,7 @@ DATA ANALYST : Sheetal
 ML-ENGINEER : Zakaria
 
 DATA ENGINNEERS TASK :
-  *Build a database from the customer data  Start Date :
+  *Build a database from the customer data  Start Date : 20/02/2023
                                             Finish Date :
   *Deploy an application for the marketing team to predict the churn rate for new client using Docker.  Start Date:
                                                                                                         Finish Date :

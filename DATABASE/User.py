@@ -1,6 +1,5 @@
 from sqlalchemy import Column, String, Integer, CHAR, Float, create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 
 Base = declarative_base()
 
@@ -93,7 +92,7 @@ def get_entry(client_number : int, session) -> User:
         return None
     return user
 
-engine = create_engine("sqlite:///BankChurners.db", echo=True)
+engine = create_engine("sqlite:///DEPLOYEMENT/BankChurners.db", echo=True)
 Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
 session = Session()

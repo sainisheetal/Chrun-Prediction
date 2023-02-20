@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, ForeignKey, Column, String, Integer, CHAR, Boolean, Float
+from sqlalchemy import Column, String, Integer, CHAR, Float, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -68,8 +68,32 @@ class User(Base):
         self.NBCFC3CDELMI2 = NBCFC3CDELMI2
         
     def __repr__(self) -> str:
-        return f"({self.client_number},{self.attrition_flag},{self.age},{self.gender},{self.dependent_count},{self.education_level},{self.marital_status},{self.income_category},{self.card_category},{self.months_on_book},{self.total_relationship_count},{self.months_inactive},{self.contacts_count},{self.credit_limit},{self.total_revolving_bal},{self.avg_open_to_buy},{self.total_amt_chng},{self.total_trans_amt},{self.total_trans_ct}
-        self.total_ct_chng = total_ct_chng
-        self.avg_utilization_ratio = avg_utilization_ratio
-        self.NBCFC3CDELMI1 = NBCFC3CDELMI1
-        self.NBCFC3CDELMI2 = NBCFC3CDELMI2 )"
+        return f"({self.client_number},{self.attrition_flag},{self.age},{self.gender},{self.dependent_count},{self.education_level},{self.marital_status},{self.income_category},{self.card_category},{self.months_on_book},{self.total_relationship_count},{self.months_inactive},{self.contacts_count},{self.credit_limit},{self.total_revolving_bal},{self.avg_open_to_buy},{self.total_amt_chng},{self.total_trans_amt},{self.total_trans_ct},{self.total_ct_chng},{self.avg_utilization_ratio},{self.NBCFC3CDELMI1},{self.NBCFC3CDELMI2})"
+    
+def add_entry(user : User, session):
+    try:
+        session.add(user)
+        session.commit()
+    except Exception as e:
+        print(e)
+    
+def get_all_entries(session) -> list:
+    try:
+        users = session.query(User).all()
+    except Exception as e:
+        print(e)
+        return None
+    return users
+
+def get_entry(client_number : int, session) -> User:
+    try:
+        user = session.query(User).filter(User.client_number == client_number)
+    except Exception as e:
+        print(e)
+        return None
+    return user
+
+engine = create_engine("sqlite:///BankChurners.db", echo=True)
+Base.metadata.create_all(bind=engine)
+Session = sessionmaker(bind=engine)
+session = Session()

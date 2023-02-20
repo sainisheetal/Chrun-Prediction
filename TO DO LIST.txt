@@ -11,7 +11,7 @@ DATA ENGINNEERS TASK :
                                                                       Finish Date :
  
 ML ENGINEERS TASK :
-  *Predict those clients with more propensity to close their bank account with financial institution.   Start Date:
+  *Predict those clients with more propensity to close their bank account with financial institution.   Start Date: 20.02.2023
                                                                                                         Finish Date:
   *Build machine learning models for classification and/or clustering.    Start Date :
                                                                           Finish Date :

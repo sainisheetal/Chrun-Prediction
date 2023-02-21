@@ -1,9 +1,20 @@
-from sqlalchemy import Column, String, Integer, CHAR, Float, create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy import Column, String, Integer, CHAR, Float
+from sqlalchemy.orm import declarative_base, Session
 
 Base = declarative_base()
 
 class User(Base):
+    """_summary_
+
+    Args:
+        Base (_type_): _description_
+
+    Returns:
+        _type_: _description_
+        
+    Description : 
+        This is the class that is used to generate the table of our database. It also implement the basic manipulation on the table.
+    """
     __tablename__ = "user"
     
     client_number = Column("CLIENTNUM", Integer, primary_key=True, autoincrement=False)
@@ -30,18 +41,12 @@ class User(Base):
     NBCFC3CDELMI1 = Column("Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1", Float, nullable=False)
     NBCFC3CDELMI2 = Column("Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2", Float, nullable=False)
     
-    def __init__(self, client_number : int,
-                 attrition_flag : str, age : int,
-                 gender : str, dependent_count : int,
-                 education_level : str , marital_status : str,
-                 income_category : str, card_category : str,
-                 months_on_book : int, total_relationship_count : int,
-                 months_inactive : int, contacts_count : int,
-                 credit_limit : float, total_revolving_bal : int,
-                 avg_open_to_buy : float, total_amt_chng : float,
-                 total_trans_amt : int, total_trans_ct : int,
-                 total_ct_chng : float, avg_utilization_ratio : float,
-                 NBCFC3CDELMI1 : float, NBCFC3CDELMI2 : float):
+    def __init__(self, client_number : int, attrition_flag : str, age : int,
+                 gender : str, dependent_count : int, education_level : str , marital_status : str,
+                 income_category : str, card_category : str, months_on_book : int, total_relationship_count : int,
+                 months_inactive : int, contacts_count : int, credit_limit : float, total_revolving_bal : int,
+                 avg_open_to_buy : float, total_amt_chng : float, total_trans_amt : int, total_trans_ct : int,
+                 total_ct_chng : float, avg_utilization_ratio : float, NBCFC3CDELMI1 : float, NBCFC3CDELMI2 : float):
         self.client_number = client_number
         self.attrition_flag = attrition_flag
         self.age = age
@@ -67,16 +72,36 @@ class User(Base):
         self.NBCFC3CDELMI2 = NBCFC3CDELMI2
         
     def __repr__(self) -> str:
-        return f"({self.client_number},{self.attrition_flag},{self.age},{self.gender},{self.dependent_count},{self.education_level},{self.marital_status},{self.income_category},{self.card_category},{self.months_on_book},{self.total_relationship_count},{self.months_inactive},{self.contacts_count},{self.credit_limit},{self.total_revolving_bal},{self.avg_open_to_buy},{self.total_amt_chng},{self.total_trans_amt},{self.total_trans_ct},{self.total_ct_chng},{self.avg_utilization_ratio},{self.NBCFC3CDELMI1},{self.NBCFC3CDELMI2})"
+        return f"{self.client_number},{self.attrition_flag},{self.age},{self.gender},{self.dependent_count},{self.education_level},{self.marital_status},{self.income_category},{self.card_category},{self.months_on_book},{self.total_relationship_count},{self.months_inactive},{self.contacts_count},{self.credit_limit},{self.total_revolving_bal},{self.avg_open_to_buy},{self.total_amt_chng},{self.total_trans_amt},{self.total_trans_ct},{self.total_ct_chng},{self.avg_utilization_ratio},{self.NBCFC3CDELMI1},{self.NBCFC3CDELMI2}"
     
-def add_entry(user : User, session):
+def add_entry(user : User, session : Session):
+    """_summary_
+
+    Args:
+        user (User): _description_
+        session (Session): _description_
+        
+    Description:
+        Add an entry to the database using the session.
+    """
     try:
         session.add(user)
         session.commit()
     except Exception as e:
         print(e)
     
-def get_all_entries(session) -> list:
+def get_all_entries(session : Session) -> list:
+    """_summary_
+
+    Args:
+        session (Session): _description_
+
+    Returns:
+        list: _description_
+        
+    Description:
+        Get all the entries of the database
+    """
     try:
         users = session.query(User).all()
     except Exception as e:
@@ -84,15 +109,22 @@ def get_all_entries(session) -> list:
         return None
     return users
 
-def get_entry(client_number : int, session) -> User:
+def get_entry(client_number : int, session : Session) -> User:
+    """_summary_
+
+    Args:
+        client_number (int): _description_
+        session (Session): _description_
+
+    Returns:
+        User: _description_
+        
+    Description:
+        Get an entry depending on the client number given in argument.
+    """
     try:
         user = session.query(User).filter(User.client_number == client_number)
     except Exception as e:
         print(e)
         return None
     return user
-
-engine = create_engine("sqlite:///DEPLOYEMENT/BankChurners.db", echo=True)
-Base.metadata.create_all(bind=engine)
-Session = sessionmaker(bind=engine)
-session = Session()

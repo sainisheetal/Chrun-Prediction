@@ -1,5 +1,5 @@
-from sqlalchemy import Column, String, Integer, CHAR, Float, create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy import Column, String, Integer, CHAR, Float
+from sqlalchemy.orm import declarative_base, Session
 
 Base = declarative_base()
 
@@ -12,7 +12,8 @@ class User(Base):
     Returns:
         _type_: _description_
         
-    Description : This is the class that is used to generate the table of our database. It also implement the basic manipulation on the table.
+    Description : 
+        This is the class that is used to generate the table of our database. It also implement the basic manipulation on the table.
     """
     __tablename__ = "user"
     
@@ -71,14 +72,14 @@ class User(Base):
         self.NBCFC3CDELMI2 = NBCFC3CDELMI2
         
     def __repr__(self) -> str:
-        return f"({self.client_number},{self.attrition_flag},{self.age},{self.gender},{self.dependent_count},{self.education_level},{self.marital_status},{self.income_category},{self.card_category},{self.months_on_book},{self.total_relationship_count},{self.months_inactive},{self.contacts_count},{self.credit_limit},{self.total_revolving_bal},{self.avg_open_to_buy},{self.total_amt_chng},{self.total_trans_amt},{self.total_trans_ct},{self.total_ct_chng},{self.avg_utilization_ratio},{self.NBCFC3CDELMI1},{self.NBCFC3CDELMI2})"
+        return f"{self.client_number},{self.attrition_flag},{self.age},{self.gender},{self.dependent_count},{self.education_level},{self.marital_status},{self.income_category},{self.card_category},{self.months_on_book},{self.total_relationship_count},{self.months_inactive},{self.contacts_count},{self.credit_limit},{self.total_revolving_bal},{self.avg_open_to_buy},{self.total_amt_chng},{self.total_trans_amt},{self.total_trans_ct},{self.total_ct_chng},{self.avg_utilization_ratio},{self.NBCFC3CDELMI1},{self.NBCFC3CDELMI2}"
     
-def add_entry(user : User, session):
+def add_entry(user : User, session : Session):
     """_summary_
 
     Args:
         user (User): _description_
-        session (_type_): _description_
+        session (Session): _description_
         
     Description:
         Add an entry to the database using the session.
@@ -89,11 +90,11 @@ def add_entry(user : User, session):
     except Exception as e:
         print(e)
     
-def get_all_entries(session) -> list:
+def get_all_entries(session : Session) -> list:
     """_summary_
 
     Args:
-        session (_type_): _description_
+        session (Session): _description_
 
     Returns:
         list: _description_
@@ -108,12 +109,12 @@ def get_all_entries(session) -> list:
         return None
     return users
 
-def get_entry(client_number : int, session) -> User:
+def get_entry(client_number : int, session : Session) -> User:
     """_summary_
 
     Args:
         client_number (int): _description_
-        session (_type_): _description_
+        session (Session): _description_
 
     Returns:
         User: _description_

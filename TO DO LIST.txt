@@ -5,7 +5,9 @@ ML-ENGINEER : Zakaria
 DATA ENGINNEERS TASK :
   *Build a database from the customer data  Start Date : 20/02/2023
                                             Finish Date : 20/02/2023
-  *Deploy an application for the marketing team to predict the churn rate for new client using Docker.  Start Date:
+  *Create dictionnary to help translate the columns for the model. Start Date : 21/02/2023
+                                                                   Finish Date : 21/02/2023
+  *Deploy an application for the marketing team to predict the churn rate for new client using Docker.  Start Date: 21/02/2023
                                                                                                         Finish Date :
   *Create a pipeline that incorporate the work from your collegues.   Start Date :
                                                                       Finish Date :

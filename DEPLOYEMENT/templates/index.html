@@ -4,33 +4,20 @@
 		<title>Price estimation for a property in Belgium</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/index.css">
 	</head>
     <body class="is-preload">
+        <header>
+        </header>
         <section id="contact" class="four">
             <div class="container">
                 <form method="post" action="">
                     <strong>{{form.client_number.label}}</strong>{{form.client_number()}} <br>
-                    <strong>{{form.attrition_flag.label}}</strong>{{form.attrition_flag()}} <br>
                     <strong>{{form.age.label}}</strong>{{form.age()}} <br>
                     <strong>{{form.gender.label}}</strong>{{form.gender()}} <br>
-                    <strong>{{form.dependent_count.label}}</strong>{{form.dependent_count()}} <br>
+                    <strong>{{form.education_level.label}}</strong>{{form.education_level()}} <br>
                     <strong>{{form.marital_status.label}}</strong>{{form.marital_status()}} <br>
                     <strong>{{form.income_category.label}}</strong>{{form.income_category()}} <br>
-                    <strong>{{form.card_category.label}}</strong>{{form.card_category()}} <br>
-                    <strong>{{form.months_on_book.label}}</strong>{{form.months_on_book()}} <br>
-                    <strong>{{form.total_relationship_count.label}}</strong>{{form.total_relationship_count()}} <br>
-                    <strong>{{form.months_inactive.label}}</strong>{{form.months_inactive()}} <br>
-                    <strong>{{form.contacts_count.label}}</strong>{{form.contacts_count()}} <br>
-                    <strong>{{form.credit_limit.label}}</strong>{{form.credit_limit()}} <br>
-                    <strong>{{form.total_revolving_bal.label}}</strong>{{form.total_revolving_bal()}} <br>
-                    <strong>{{form.avg_open_to_buy.label}}</strong>{{form.avg_open_to_buy()}} <br>
-                    <strong>{{form.total_amt_chng.label}}</strong>{{form.total_amt_chng()}} <br>
-                    <strong>{{form.total_trans_amt.label}}</strong>{{form.total_trans_amt()}} <br>
-                    <strong>{{form.total_trans_ct.label}}</strong>{{form.total_trans_ct()}} <br>
-                    <strong>{{form.total_ct_chng.label}}</strong>{{form.total_ct_chng()}} <br>
-                    <strong>{{form.avg_utilization_ratio.label}}</strong>{{form.avg_utilization_ratio()}} <br>
-                    <strong>{{form.NBCFC3CDELMI1.label}}</strong>{{form.NBCFC3CDELMI1()}} <br>
-                    <strong>{{form.NBCFC3CDELMI2.label}}</strong>{{form.NBCFC3CDELMI2()}} <br>
                     {{form.submit()}}
                 </form>
             </div>
@@ -38,5 +25,8 @@
         <div>
             <p>{{result}}</p>
         </div>
+        <footer>
+
+        </footer>
     </body>
 </html>

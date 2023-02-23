@@ -143,3 +143,27 @@ def Card_Category_number_to_str() -> dict:
             "1" : "Silver",
             "2" : "Gold",
             "3" : "Platinum"}
+    
+def Gender_str_to_number() -> dict:
+    """_summary_
+
+    Returns:
+        dict: _description_
+        
+    Description:
+        Create a dict to transform the value from the Gender column to a value understandable by the model.
+    """
+    return {"M" : 0,
+            "F" : 1}
+    
+def Gender_number_to_str() -> dict:
+    """_summary_
+
+    Returns:
+        dict: _description_
+        
+    Description:
+        Create a dict to transform back the value from the Gender column.
+    """
+    return {"0" : "M",
+            "1" : "F"}

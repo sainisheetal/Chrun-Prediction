@@ -1,0 +1,15 @@
+                     Model name                                       Training MSE  ...                                           Test MSE                                            Test R2
+0             Linear regression                                           0.000003  ...                                           0.000003                                            0.99998
+0      Random Forest regression                                                0.0  ...                                                0.0                                                1.0
+0                         Ridge                                           0.000003  ...                                           0.000003                                           0.999979
+0                SGD regression  9754398093770105094285469103995162516028336512...  ...  9746915753924376951981355923636159663682052656... -7217890122036628988270629036778097633716523374...
+0         Extra tree regression                                                0.0  ...                                                0.0                                                1.0
+0  Gradient boosting regression                                                0.0  ...                                                0.0                                                1.0
+0        K neighbors regression                                           0.107462  ...                                           0.162551                                          -0.203743
+0                MLP regression                                      521744.717797  ...                                      511126.997767                                     -3785051.21696
+0      Decision tree regression                                                0.0  ...                                                0.0                                                1.0
+0         Extra tree regression                                                0.0  ...                                                0.0                                                1.0
+0         Linear SVR regression                                           0.839621  ...                                            0.83906                                          -5.213497
+0                           SVR                                            0.13837  ...                                           0.138815                                          -0.027969
+
+[12 rows x 5 columns]

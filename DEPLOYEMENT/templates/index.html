@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-		<title>Price estimation for a property in Belgium</title>
+		<title>Churning estimation for bank clients !</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/index.css">
@@ -9,24 +9,35 @@
     <body class="is-preload">
         <header>
         </header>
-        <section id="contact" class="four">
-            <div class="container">
+        <section>
+            <div class="forms-container">
                 <form method="post" action="">
-                    <strong>{{form.client_number.label}}</strong>{{form.client_number()}} <br>
-                    <strong>{{form.age.label}}</strong>{{form.age()}} <br>
-                    <strong>{{form.gender.label}}</strong>{{form.gender()}} <br>
-                    <strong>{{form.education_level.label}}</strong>{{form.education_level()}} <br>
-                    <strong>{{form.marital_status.label}}</strong>{{form.marital_status()}} <br>
-                    <strong>{{form.income_category.label}}</strong>{{form.income_category()}} <br>
-                    {{form.submit()}}
+                    <div class="form-lign">
+                        <strong>{{form.age.label}}</strong>{{form.age()}} <br>
+                    </div>
+                    <div class="form-lign">
+                        <strong>{{form.gender.label}}</strong>{{form.gender()}} <br>
+                    </div>
+                    <div class="form-lign">
+                        <strong>{{form.education_level.label}}</strong>{{form.education_level()}} <br>
+                    </div>
+                    <div class="form-lign">
+                        <strong>{{form.marital_status.label}}</strong>{{form.marital_status()}} <br>
+                    </div>
+                    <div class="form-lign">
+                        <strong>{{form.income_category.label}}</strong>{{form.income_category()}} <br>
+                    </div>
+                    <div class="form-lign">
+                        {{form.submit()}}
+                    </div>
                 </form>
             </div>
+            <div class="result-container">
+                {{result}}
+            </div>
         </section>
-        <div>
-            <p>{{result}}</p>
-        </div>
         <footer>
-
+            <p>This website was made by Andy GILET, Zakaria ADEM-HASSAN, Sheetal</p>
         </footer>
     </body>
 </html>

@@ -2,7 +2,6 @@ from flask_wtf import FlaskForm
 from wtforms import IntegerField, SelectField, SubmitField, FloatField
 
 class user_entry_form(FlaskForm):
-    client_number = IntegerField('client_number')
     age = IntegerField('age')
     gender = SelectField('gender', choices=["M",
                                             "F"])

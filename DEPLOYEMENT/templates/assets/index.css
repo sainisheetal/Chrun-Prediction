@@ -1,15 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 header{
     width : 100%;
     height : 100px;
     background-color: BLACK;
-    margin: 0px 0px 0px 0px;
-    position: relative;
 }
 
 footer{
     width: 100%;
     height : 250px;
     background-color: BLACk;
-    margin: 0px 0px 0px 0px;
-    position: relative;
+    position : fixed;
+    bottom: 0;
+    font-color : WHITE;
+}
+
+.forms-container{
+    width : auto;
+    margin : 10px 10px 10px 10px;
+    padding : 10px 10px 10px 10px;
+    border : solid;
+    border-width : 10px 10px 10px 10px;
+}
+
+.form-lign{
+    padding : 5px 5px 5px 5px;
+}
+
+.result-container{
+    border : solid;
 }

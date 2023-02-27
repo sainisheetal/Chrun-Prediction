@@ -26,6 +26,14 @@ def home():
         #La ligne est foireuse, vérifier le travaille de Zak dans un fichier à part car flemme de tout refaire.
         return render_template('index.html', form=form, result=result)
     return render_template('index.html', form=form)
+
+@app.route("/Contributors")
+def contributors():
+    return render_template("contributors.html")
+
+@app.route("/Insights")
+def insights():
+    return render_template("insights.html")
             
 api.add_resource(User_request, "/User")
 

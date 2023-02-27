@@ -17,15 +17,17 @@ with open("model/model.pickle", "rb") as file:
 @app.route('/home', methods=['POST', 'GET'])
 def home():
     form = user_entry_form()
+    result_prediction = "Please enter the information of a client to get a prediction !"
+    result_crossdata = "Please enter the information of a client to get the other services the bank provide to him !"
     if form.is_submitted():
         result = request.form
-        result = treat_information(result)
+        result_prediction = treat_information(result)
         client_number = result[0]
         #créer la base de donnée No_sql et se servir du numéro client pour récupérer les assurances.
         #model_result = model.predict(create_predict_dataframe(result[1:]))
         #La ligne est foireuse, vérifier le travaille de Zak dans un fichier à part car flemme de tout refaire.
-        return render_template('index.html', form=form, result=result)
-    return render_template('index.html', form=form)
+        return render_template('index.html', form=form, result_prediction=result_prediction, result_crossdata=result_crossdata)
+    return render_template('index.html', form=form, result_prediction=result_prediction, result_crossdata=result_crossdata)
 
 @app.route("/Contributors")
 def contributors():

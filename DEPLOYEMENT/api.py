@@ -3,6 +3,8 @@ from flask_restful import Api
 from ressources.forms import user_entry_form
 from ressources.rest_class import User_request
 from ressources.entries_treatment import treat_information, create_predict_dataframe
+from pymongo import MongoClient
+from pprint import pprint
 
 import pickle
 import pandas as pd
@@ -10,6 +12,7 @@ import pandas as pd
 app = Flask(__name__, template_folder='templates', static_folder='templates/assets')
 app.config['SECRET_KEY'] = 'ValeureuxLiegeois'
 api = Api(app)
+client = MongoClient('localhost', 27017)
 
 with open("model/model.pickle", "rb") as file:
     model = pickle.load(file)

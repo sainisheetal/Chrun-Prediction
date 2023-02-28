@@ -1,22 +1,24 @@
-from pymongo import MongoClient
+from pymongo import MongoClient, database, collection, InsertOne
 from pprint import pprint
 
-client = MongoClient()
+def verification_mangodb_table(client : MongoClient):
+    dblist = client.list_database_names()
+    if "services" not in dblist:
+        db = client["services"]
+        mycol = db["assurances"]
+    else:
+        db = client.services
+        collist = db.list_collection_names()
+        if "assurances" not in collist:
+            mycol = db["assurances"]
+        
+def connection_mangodb_table(client : MongoClient) -> collection:
+    db = client.services
+    db = db.assurances
+    return db
 
-# Connect to the test db 
-db=client.test
-
-# Use the employee collection
-employee = db.employee
-employee_details = {
-    'Name': 'Raj Kumar',
-    'Address': 'Sears Streer, NZ',
-    'Age': '42'
-}
-
-# Use the insert method
-result = employee.insert_one(employee_details)
-
-# Query for the inserted document.
-Queryresult = employee.find_one({'Age': '42'})
-pprint(Queryresult)
+def add_one_result(result : dict, assurances : collection):
+    assurances.insert_one(result)
+    
+def find_assurance_info(client_number : int, assurances : collection) -> dict:
+    return assurances.find_one({"CLIENTNUM" : client_number})

@@ -15,7 +15,7 @@ class Result(Base):
     Description : 
         This is the class that is used to generate the table of our database. It also implement the basic manipulation on the table.
     """
-    __tablename__ = "user"
+    __tablename__ = "result"
     
     id = Column("Id", Integer, primary_key=True)
     client_number = Column("CLIENTNUM", Integer, nullable=True)
@@ -86,3 +86,23 @@ def get_all_entries(session : Session) -> list:
         print(e)
         return None
     return users
+
+def get_entry(id : int, session : Session) -> Result:
+    """_summary_
+
+    Args:
+        client_number (int): _description_
+        session (Session): _description_
+
+    Returns:
+        User: _description_
+        
+    Description:
+        Get an entry depending on the client number given in argument.
+    """
+    try:
+        user = session.query(Result).filter(Result.id == id)
+    except Exception as e:
+        print(e)
+        return None
+    return user

@@ -22,10 +22,11 @@ def home():
     if form.is_submitted():
         result = request.form
         result_prediction = treat_information(result)
-        client_number = result[0]
         #créer la base de donnée No_sql et se servir du numéro client pour récupérer les assurances.
         #model_result = model.predict(create_predict_dataframe(result[1:]))
         #La ligne est foireuse, vérifier le travaille de Zak dans un fichier à part car flemme de tout refaire.
+        result_prediction = "The model is not yet ready to be incorporated. When it will be the prediction will be here with possible other information depending on Zakaria's work."
+        result_crossdata = "If a client number is entered in the form and the client number is present in the No_SQL database, the value of this client will be show here depending on the other services he paid for."
         return render_template('index.html', form=form, result_prediction=result_prediction, result_crossdata=result_crossdata)
     return render_template('index.html', form=form, result_prediction=result_prediction, result_crossdata=result_crossdata)
 

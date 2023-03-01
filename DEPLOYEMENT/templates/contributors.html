@@ -1,99 +1,66 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Chunk Bank</title>
+        <title>W3.CSS Template</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
         <style>
-            body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-            .mySlides {display: none}
-            img {width: 50%; height: auto;}
-            .logo_github {width: 10%; height: auto;}
-            .logo_linkedin {width: 10%; height: auto;}
+            body, html {height: 100%; font-family: "Inconsolata", sans-serif;}
+            .bgimg {background-position: center; background-size: cover; background-image: url("/w3images/coffeehouse.jpg"); min-height: 75%;}
+            .menu {display: none;}
         </style>
     </head>
-    <body class="w3-content w3-border-left w3-border-right">
+    <body>
+        <!-- Links (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-row w3-padding w3-black">
+                <div class="w3-col s3">
+                    <a href="http://localhost:5000/home" class="w3-button w3-block w3-black">PREDICTION</a>
+                </div>
+                <div class="w3-col s3">
+                    <a href="http://localhost:5000/Dashboard" class="w3-button w3-block w3-black">DASHBOARD</a>
+                </div>
+                <div class="w3-col s3">
+                    <a href="http://localhost:5000/Contributors" class="w3-button w3-block w3-black">CONTRIBUTORS</a>
+                </div>
+            </div>
+        </div>
 
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
-        <div class="w3-container w3-display-container w3-padding-16">
-            <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
-            <h3>Chunk Bank</h3>
+        <!-- Add a background color and large text to the whole page -->
+        <div class="w3-sand w3-grayscale w3-large">
+
+            <!-- About Container -->
+            <div class="w3-container" id="about">
+                <div class="w3-content" style="max-width:700px">
+                    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ANDY GILET - DATA ENGINEER</span></h5>
+                    <center><img src="assets/image/andy_gilet.png"/></center>
+                    <p><img src="assets/image/logo_linkedin.png" class="logo_linkedin"/><a href="https://www.linkedin.com/in/andy-gilet/">Andy Gilet</a></p>
+                    <p><img src="assets/image/logo_github.png" class="logo_github"/><a href="https://github.com/andygilet">andygilet</a></p>
+                </div>
+            </div>
             <hr>
+
+            <div class="w3-container" id="about">
+                <div class="w3-content" style="max-width:700px">
+                    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ZAKARIA ADEM-HASSAN - MACHINE LEARNING ENGINEER</span></h5>
+                    <center><img src="assets/image/zakaria.png"/></center>
+                    <p><img src="assets/image/logo_linkedin.png" class="logo_linkedin"/><a href="https://www.linkedin.com/in/zademhassan/">Zakaria Adem-hassan</a></p>
+                    <p><img src="assets/image/logo_github.png" class="logo_github"/><a href="https://github.com/SPMK22">SPMK22</a></p>
+                </div>
+            </div>
+            <hr>
+
+            <div class="w3-container" id="about">
+                <div class="w3-content" style="max-width:700px">
+                    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">SHEETAL SAINI - DATA ANALYST</span></h5>
+                    <center><img src="assets/image/sheetal_saini.png"/></center>
+                    <p><img src="assets/image/logo_linkedin.png" class="logo_linkedin"/><a href="https://www.linkedin.com/in/sheetal-saini-a3752166/">Sheetal Saini</a></p>
+                    <p><img src="assets/image/logo_github.png" class="logo_github"/><a href="https://github.com/sainisheetal">sainisheetal</a></p>
+                </div>
+            </div>
+
         </div>
-        <div class="w3-bar-block">
-            <a href="http://localhost:5000/home" class="w3-bar-item w3-button w3-padding-16">Prediction</a>
-            <a href="http://localhost:5000/Contributors" class="w3-bar-item w3-button w3-padding-16">Contributors</a>
-            <a href="http://localhost:5000/Insights" class="w3-bar-item w3-button w3-padding-16">Insight</a>
-        </div>
-    </nav>
-
-    <!-- Top menu on small screens -->
-    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-        <span class="w3-bar-item">Contributors</span>
-        <a href="javascript:void(0)" class="w3-right w3-bar-item w3-button" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    </header>
-
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main w3-white" style="margin-left:260px">
-
-    <!-- Push down content on small screens -->
-    <div class="w3-hide-large" style="margin-top:80px"></div>
-    <div class="w3-container">
-        <h4><strong>Andy GILET - Data Engineer</strong></h4>
-        <div class="w3-row w3-large">
-            <div class="w3-col s6">
-                <img src="assets/image/andy_gilet.png"/>
-            </div>
-            <div class="w3-col s6">
-                <p><img src="assets/image/logo_github.png" class="logo_github"></i><a href="https://github.com/andygilet">andygilet</a></p>
-                <p><img src="assets/image/logo_linkedin.png" class="logo_linkedin"></i><a href="https://www.linkedin.com/in/andy-gilet/">Andy Gilet</a></p>
-            </div>
-        </div>
-        <hr>
-    
-        <h4><strong>Zakaria ADEM-HASSAN - Machine Learning Engineer</strong></h4>
-        <div class="w3-row w3-large">
-            <div class="w3-col s6">
-                <img src="assets/image/zakaria.png"/>
-            </div>
-            <div class="w3-col s6">
-                <p><img src="assets/image/logo_github.png" class="logo_github"></i><a href="https://github.com/SPMK22">SPMK22</a></p>
-                <p><img src="assets/image/logo_linkedin.png" class="logo_linkedin"></i><a href="https://www.linkedin.com/in/zademhassan/">Zakaria Adem-hassan</a></p>
-            </div>
-        </div>
-        <hr>
-
-        <h4><strong>Sheetal SAINI - Data Analist</strong></h4>
-        <div class="w3-row w3-large">
-            <div class="w3-col s6">
-                <img src="assets/image/sheetal_saini.png"/>
-            </div>
-            <div class="w3-col s6">
-                <p><img src="assets/image/logo_github.png" class="logo_github"></i><a href="https://github.com/sainisheetal">sainisheetal</a></p>
-                <p><img src="assets/image/logo_linkedin.png" class="logo_linkedin"></i><a href="https://www.linkedin.com/in/sheetal-saini-a3752166/">Sheetal Saini</a></p>
-            </div>
-        </div>
-    </div>
-
-<script>
-// Script to open and close sidebar when on tablets and phones
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
-</body>
+    </body>
 </html>

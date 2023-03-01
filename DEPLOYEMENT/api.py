@@ -37,9 +37,9 @@ def home():
 def contributors():
     return render_template("contributors.html")
 
-@app.route("/Insights")
+@app.route("/Dashboard")
 def insights():
-    return render_template("insights.html")
+    return render_template("dashboard.html")
             
 api.add_resource(User_request, "/User")
 

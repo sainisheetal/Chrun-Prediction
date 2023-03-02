@@ -47,6 +47,8 @@ The XGBoost had the best accuracy but bad metrics , same for Logistic Regression
 
 ## Data Analysis :
 
+![Dashboard](https://github.com/sainisheetal/Chrun-Prediction/blob/main/Data%20Analysis/Credit_Card_Attrition%20Dashboard.png)
+
 
 ## Deployment explaination : 
 

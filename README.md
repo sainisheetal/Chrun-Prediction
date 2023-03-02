@@ -50,5 +50,16 @@ The XGBoost had the best accuracy but bad metrics , same for Logistic Regression
 
 ## Deployment explaination : 
 
+Our app work as as an API and a REST API. You can acsess a web page (https://group3-chunk-prediction.onrender.com/home) to enter data with a webform linked to flask and get a prediction if the client is about to churn.
 
+You can also make request on the API to get a dictionnary containing the result of the prediction (1 = about to churn, 0 = not about to churn) and what other services of the bank the client has. To make sure the request are correct, I used a requestParser to make sure the request to the API are correct.
 
+![Capture](capture_request.png)
+
+![Capture](capture_result.png)
+
+The other services of the client are currently stored in a json file but one of the amelioration we were thinking about was to use a no_sql database and connect it to the app to replace this file.
+
+The data from the CSV we got at the start of the project is stored in an intern database and can be access with a class User that implement some basic functions that hide the SQL from the user. (Yes, SQL can be really scary)
+
+Two sets of function can be used to get the datas as a User variable or as a panda dataframe.

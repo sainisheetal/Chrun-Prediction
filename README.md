@@ -46,6 +46,11 @@ The XGBoost had the best accuracy but bad metrics , same for Logistic Regression
 ![Decision Tree](https://github.com/sainisheetal/Chrun-Prediction/blob/main/model/accuracy%20and%20metric%20DECISION%20TREE.png)
 
 ## Data Analysis :
+1.Build the Dashboard with data insights and KPI's
+2. Analysed the data in Pandas 
+3. Performed clustering analysis with Tableau.
+4. Prepared Client Profile
+![Dashboard](https://github.com/sainisheetal/Chrun-Prediction/blob/main/Data%20Analysis/Credit_Card_Attrition%20Dashboard.png)
 
 
 ## Deployment explaination : 

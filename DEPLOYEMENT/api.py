@@ -1,18 +1,15 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Markup
 from flask_restful import Api
 from ressources.forms import user_entry_form
 from ressources.rest_class import User_request
-from ressources.entries_treatment import treat_information, create_predict_dataframe
-from pymongo import MongoClient
-from pprint import pprint
+from ressources.entries_treatment import treat_information
+from ressources.insurance_calculation import calculate_client_value
 
 import pickle
-import pandas as pd
 
 app = Flask(__name__, template_folder='templates', static_folder='templates/assets')
 app.config['SECRET_KEY'] = 'ValeureuxLiegeois'
 api = Api(app)
-client = MongoClient('localhost', 27017)
 
 with open("model/model.pickle", "rb") as file:
     model = pickle.load(file)
@@ -25,13 +22,27 @@ def home():
     if form.is_submitted():
         result = request.form
         result_prediction = treat_information(result)
-        #créer la base de donnée No_sql et se servir du numéro client pour récupérer les assurances.
-        #model_result = model.predict(create_predict_dataframe(result[1:]))
-        #La ligne est foireuse, vérifier le travaille de Zak dans un fichier à part car flemme de tout refaire.
-        result_prediction = "The model is not yet ready to be incorporated. When it will be the prediction will be here with possible other information depending on Zakaria's work."
-        result_crossdata = "If a client number is entered in the form and the client number is present in the No_SQL database, the value of this client will be show here depending on the other services he paid for."
-        return render_template('index.html', form=form, result_prediction=result_prediction, result_crossdata=result_crossdata)
-    return render_template('index.html', form=form, result_prediction=result_prediction, result_crossdata=result_crossdata)
+        if result_prediction != None:
+            if result["client_number"] != "":
+                result_prediction = model.predict([result_prediction[1:]])
+                if result_prediction[0] == 0:
+                    result_prediction = "The client is not about to chunk !"
+                else:
+                    result_prediction = "The client is about to chunk !"
+                result_crossdata = calculate_client_value(int(result["client_number"]))
+            else:
+                result_prediction = model.predict([result_prediction[1:]])
+                if result_prediction[0] == 0:
+                    result_prediction = "The client is not about to chunk !"
+                else:
+                    result_prediction = "The client is about to chunk !"
+                result_crossdata = "Enter a client number to get his insurance value !"
+        else:
+            result_prediction = "Please enter all the client data to get a prediction"
+            result_crossdata = "Enter a client number to get his insurance value !"
+            
+        return render_template('index.html', form=form, result_prediction=result_prediction, result_crossdata=Markup(result_crossdata))
+    return render_template('index.html', form=form, result_prediction=result_prediction, result_crossdata=Markup(result_crossdata))
 
 @app.route("/Contributors")
 def contributors():

@@ -18,8 +18,12 @@ clients = df["CLIENTNUM"].values
 file = open("DEPLOYEMENT/database/insurance.json", "w")
 file.close()
 
+final_dict = {}
+
 for client in clients:
     result_dict = rand_dict_filler()
-    with open("DEPLOYEMENT/database/insurance.json", "a") as file:
-        json.dump({"CLIENTNUM" : f"{client}", "insurance_data" : result_dict}, file)
+    final_dict[f"{client}"] = result_dict
+    
+with open("DEPLOYEMENT/database/insurance.json", "a") as file:
+    json.dump(final_dict, file)
     

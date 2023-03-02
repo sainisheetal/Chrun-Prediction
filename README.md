@@ -13,7 +13,7 @@ We are working as a team of 3 : 1 data analyst (Sheetal Saini : sainisheetal) , 
 
 ### Data Engineers
 
-- Build a database from the customer data. - [X]
+- [X] Build a database from the customer data.
 - Deploy an application for the marketing team to predict the churn rate for new client using Docker.  - [X]
 - Create a pipeline that incorporates the work from your colleagues (e.g. deployed app should use the model developed by the ML engineer and dashboard developed by the data analyst). - [X]
 
